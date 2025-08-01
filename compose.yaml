@@ -1,0 +1,13 @@
+services:
+  coredns:
+    image: coredns/coredns:latest
+    command: [ "-conf", "/Corefile" ]
+    ports:
+      - 1053:53/udp
+      - 1053:53/tcp
+    volumes:
+      - ./Corefile:/Corefile
+  app:
+    image: ghcr.io/stefanprodan/podinfo:latest
+    ports:
+      - 80:9898
