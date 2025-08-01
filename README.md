@@ -2,4 +2,9 @@
 
 ## macOS
 
-1. Create a local DNS resolver
+Create a local DNS resolver
+
+```file="/etc/resolver/internal"
+nameserver 127.0.0.1
+port 1053
+```
